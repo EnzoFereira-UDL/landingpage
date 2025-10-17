@@ -1,4 +1,4 @@
-/* Fuentes y base */
+/* Tipografía y colores base */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #fdfcfb;
@@ -8,7 +8,6 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-/* Colores dorados */
 .gold-text {
   color: #c5a572;
 }
@@ -22,12 +21,11 @@ h1, h2, h3 {
   border-color: #c5a572;
 }
 
-/* Hover dorado util */
 .hover-gold-text:hover {
   color: #c5a572;
 }
 
-/* CTA */
+/* Botones CTA */
 .cta-button {
   transition: all 0.3s ease;
 }
@@ -36,13 +34,13 @@ h1, h2, h3 {
   box-shadow: 0 10px 20px -5px rgba(0,0,0,0.12);
 }
 
-/* Hero background fallback (set via inline style in HTML) */
+/* Hero section */
 .hero-bg {
   background-size: cover;
   background-position: center;
 }
 
-/* Hover escala */
+/* Tarjetas y efectos hover */
 .hover-scale {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -51,7 +49,7 @@ h1, h2, h3 {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* Reveal on scroll */
+/* Animaciones de aparición */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -62,13 +60,70 @@ h1, h2, h3 {
   transform: translateY(0);
 }
 
-/* Mobile menu transition */
+/* Menú móvil */
 #mobileMenu {
   transition: max-height 0.25s ease, opacity 0.2s ease;
 }
 
-/* Accesibilidad: focus visible */
+/* Formularios */
+input, select, textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #c5a572;
+  box-shadow: 0 0 0 2px rgba(197,165,114,0.25);
+}
+
+/* Botón principal Reservar */
+#reserveBtn {
+  background-color: #c5a572;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+}
+#reserveBtn:hover {
+  background-color: #b3915c;
+  transform: translateY(-2px);
+}
+
+/* Contacto */
+#contactForm button {
+  background-color: #c5a572;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+#contactForm button:hover {
+  background-color: #b3915c;
+  transform: translateY(-2px);
+}
+
+/* Accesibilidad */
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
   outline: 3px solid rgba(197,165,114,0.15);
   outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #c5a572;
+}
+footer a:hover {
+  color: #b3915c;
 }

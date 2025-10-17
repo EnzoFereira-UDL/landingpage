@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
   }
 
-  // Menú móvil
+  // ----- Menú móvil -----
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   if (mobileMenuBtn && mobileMenu) {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Smooth scroll para anchors internas (ignora enlaces que abren WhatsApp)
+  // ----- Smooth Scroll -----
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Reveal on scroll con IntersectionObserver (fallback incluido)
+  // ----- Animaciones Reveal on Scroll -----
   const revealEls = document.querySelectorAll('.reveal-on-scroll');
   if ('IntersectionObserver' in window && revealEls.length) {
     const obs = new IntersectionObserver((entries, observer) => {
@@ -44,59 +44,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
     revealEls.forEach(el => obs.observe(el));
   } else {
-    const revealOnScrollFallback = () => {
+    const revealFallback = () => {
       const triggerBottom = window.innerHeight * 0.85;
       revealEls.forEach(el => {
         const top = el.getBoundingClientRect().top;
         if (top < triggerBottom) el.classList.add('visible');
       });
     };
-    window.addEventListener('scroll', revealOnScrollFallback);
-    revealOnScrollFallback();
+    window.addEventListener('scroll', revealFallback);
+    revealFallback();
   }
 
-  // ----- RESERVAR AHORA: abrir WhatsApp con datos del formulario -----
+  // ----- BOTÓN RESERVAR AHORA (WhatsApp) -----
   const reserveBtn = document.getElementById('reserveBtn');
-  const whatsappNumber = '524778510780'; // número en formato internacional (sin +)
+  const whatsappNumber = '524778510780'; // número sin el símbolo '+'
+
   if (reserveBtn) {
     reserveBtn.addEventListener('click', () => {
-      const checkinEl = document.getElementById('checkin');
-      const checkoutEl = document.getElementById('checkout');
-      const guestsEl = document.getElementById('guests');
+      const checkin = document.getElementById('checkin')?.value || '';
+      const checkout = document.getElementById('checkout')?.value || '';
+      const guests = document.getElementById('guests')?.value || '';
+      const roomType = document.getElementById('roomType')?.value || '';
 
-      const checkin = checkinEl && checkinEl.value ? checkinEl.value : 'No especificado';
-      const checkout = checkoutEl && checkoutEl.value ? checkoutEl.value : 'No especificado';
-      const guests = guestsEl && guestsEl.value ? guestsEl.value : 'No especificado';
+      if (!checkin || !checkout || !guests || !roomType) {
+        alert('Por favor completa todos los campos antes de reservar.');
+        return;
+      }
 
-      const msg = `Hola,%20me%20gustaría%20reservar%20una%20estancia%20en%20Hotel%20Brisa%20del%20Bajío.%0ALlegada:%20${encodeURIComponent(checkin)}%0ASalida:%20${encodeURIComponent(checkout)}%0AHuéspedes:%20${encodeURIComponent(guests)}%0A¿Me%20pueden%20confirmar%20disponibilidad%20y%20tarifas?`;
+      const msg = `
+Hola, me gustaría hacer una reserva en Hotel Brisa del Bajío:
+📅 Desde: ${checkin}
+📅 Hasta: ${checkout}
+👥 Huéspedes: ${guests}
+🏨 Habitación: ${roomType}
+¿Podrían confirmarme disponibilidad y tarifas, por favor?`;
 
-      const url = `https://wa.me/${whatsappNumber}?text=${msg}`;
-
-      // Abrir en nueva pestaña
+      const encodedMsg = encodeURIComponent(msg);
+      const url = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
       window.open(url, '_blank');
     });
   }
 
-  // ----- Contact form simple: evita submit real y abre WhatsApp (opcional) -----
-  // Si prefieres que el formulario de contacto envíe por WhatsApp en lugar de POST, descomenta lo siguiente:
+  // ----- FORMULARIO DE CONTACTO -----
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const nombre = document.getElementById('contactNombre')?.value || 'No especificado';
-      const email = document.getElementById('contactEmail')?.value || 'No especificado';
-      const telefono = document.getElementById('contactTel')?.value || 'No especificado';
-      const asunto = document.getElementById('contactAsunto')?.value || 'No especificado';
-      const mensaje = document.getElementById('contactMensaje')?.value || 'No especificado';
+      const nombre = document.getElementById('contactNombre')?.value || '';
+      const email = document.getElementById('contactEmail')?.value || '';
+      const telefono = document.getElementById('contactTel')?.value || '';
+      const asunto = document.getElementById('contactAsunto')?.value || '';
+      const mensaje = document.getElementById('contactMensaje')?.value || '';
 
-      // Si quieres enviar por WhatsApp en vez de enviar el formulario al servidor, usa la siguiente línea:
-      const contactMsg = `Hola,%20mi%20nombre%20es%20${encodeURIComponent(nombre)}.%0AAsunto:%20${encodeURIComponent(asunto)}%0AEmail:%20${encodeURIComponent(email)}%0ATeléfono:%20${encodeURIComponent(telefono)}%0AMensaje:%20${encodeURIComponent(mensaje)}`;
-      const contactUrl = `https://wa.me/${whatsappNumber}?text=${contactMsg}`;
+      const contactMsg = `
+Hola, soy ${nombre}.
+📧 Correo: ${email}
+📞 Teléfono: ${telefono}
+📝 Asunto: ${asunto}
 
-      // Abrir WhatsApp
+Mensaje:
+${mensaje}`;
+
+      const encodedMsg = encodeURIComponent(contactMsg);
+      const contactUrl = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
       window.open(contactUrl, '_blank');
-
-      // Si prefieres enviar el formulario al servidor, reemplaza la apertura de WhatsApp por contactForm.submit()
     });
   }
 
