@@ -4,14 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hotel Brisa del Bajío | Luxury & Comfort en León, Guanajuato</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon.png">
+
+  <!-- Tailwind + fuentes -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="text-slate-800">
+<body class="text-slate-800 bg-white">
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -27,7 +35,6 @@
         <a href="#servicios" class="hover-gold-text transition-colors">Servicios</a>
         <a href="#habitaciones" class="hover-gold-text transition-colors">Habitaciones</a>
         <a href="#gastronomia" class="hover-gold-text transition-colors">Gastronomía</a>
-        <a href="#explora" class="hover-gold-text transition-colors">Explora León</a>
         <a href="#contacto" class="hover-gold-text transition-colors">Contacto</a>
       </div>
 
@@ -41,26 +48,28 @@
       </div>
     </nav>
 
+    <!-- Menú móvil -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white">
       <div class="px-4 py-4 space-y-2">
         <a href="#servicios" class="block py-2">Servicios</a>
         <a href="#habitaciones" class="block py-2">Habitaciones</a>
         <a href="#gastronomia" class="block py-2">Gastronomía</a>
-        <a href="#explora" class="block py-2">Explora León</a>
         <a href="#contacto" class="block py-2">Contacto</a>
         <a href="#booking-form" class="block py-2 font-bold gold-text">Reservar</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/images/fondoindex.jpg'); background-size: cover; background-position: center;">
+  <!-- Hero -->
+  <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center" 
+    style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/images/fondoindex.jpg'); background-size: cover; background-position: center;">
     <div class="container mx-auto px-6 text-center">
       <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">Su Estancia de Lujo en el Corazón del Bajío</h1>
       <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">Donde la elegancia, el confort y un servicio impecable se encuentran.</p>
 
       <div id="booking-form" class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-slate-700">
-        <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end" action="#" method="get">
+        <!-- Nota: el botón Reservar ahora usa JS para abrir WhatsApp con datos prellenados -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
           <div>
             <label for="checkin" class="block text-sm font-medium text-slate-600">Llegada</label>
             <input type="date" id="checkin" name="checkin" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
@@ -78,8 +87,58 @@
               <option>2 Adultos, 2 Niños</option>
             </select>
           </div>
-          <button type="submit" class="w-full cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-sky-700 text-lg">VER DISPONIBILIDAD</button>
-        </form>
+          <div>
+            <button id="reserveBtn" type="button" class="w-full cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-sky-700 text-lg">
+              RESERVAR AHORA
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value proposition -->
+  <section class="bg-[#f3f0ea]">
+    <div class="container mx-auto px-6 py-6 text-center">
+      <h2 class="text-xl md:text-2xl font-bold text-slate-800">
+        <i data-lucide="shield-check" class="inline-block mr-2 gold-text" aria-hidden="true"></i>
+        Garantía de Mejor Tarifa y Exclusividad al Reservar Directo
+      </h2>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-16 md:py-24 reveal-on-scroll">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Servicios Exclusivos</h2>
+        <p class="mt-4 text-lg text-slate-600">Diseñados para superar sus expectativas.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+          <i data-lucide="wifi" class="mx-auto h-12 w-12 gold-text" aria-hidden="true"></i>
+          <h3 class="text-xl font-bold mt-4 mb-2">Wi-Fi de Alta Velocidad</h3>
+          <p class="text-slate-600">Conexión de cortesía en todas las áreas del hotel.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+          <i data-lucide="car" class="mx-auto h-12 w-12 gold-text" aria-hidden="true"></i>
+          <h3 class="text-xl font-bold mt-4 mb-2">Valet Parking</h3>
+          <p class="text-slate-600">Comodidad y seguridad para su vehículo.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+          <i data-lucide="waves" class="mx-auto h-12 w-12 gold-text" aria-hidden="true"></i>
+          <h3 class="text-xl font-bold mt-4 mb-2">Alberca Climatizada</h3>
+          <p class="text-slate-600">Un oasis de relajación disponible todo el año.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+          <i data-lucide="concierge-bell" class="mx-auto h-12 w-12 gold-text" aria-hidden="true"></i>
+          <h3 class="text-xl font-bold mt-4 mb-2">Servicio de Concierge</h3>
+          <p class="text-slate-600">Asistencia personalizada para reservaciones y actividades.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -90,6 +149,7 @@
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Santuarios de Descanso</h2>
       <p class="mt-4 text-lg text-slate-600">Cada habitación, una promesa de confort y elegancia.</p>
     </div>
+
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover-scale">
         <img src="assets/images/deluxe.jpg" alt="Habitación Deluxe" class="w-full h-56 object-cover">
@@ -99,6 +159,7 @@
           <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg">Reservar</a>
         </div>
       </div>
+
       <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover-scale">
         <img src="assets/images/juniorsuite.jpg" alt="Junior Suite" class="w-full h-56 object-cover">
         <div class="p-6 flex flex-col flex-grow">
@@ -107,6 +168,7 @@
           <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg">Reservar</a>
         </div>
       </div>
+
       <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover-scale">
         <img src="assets/images/mastersuite.jfif" alt="Master Suite" class="w-full h-56 object-cover">
         <div class="p-6 flex flex-col flex-grow">
@@ -124,17 +186,38 @@
       <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Gastronomía Exquisita</h2>
       <p class="mt-4 text-lg text-slate-600">Experiencias culinarias únicas con chefs reconocidos.</p>
     </div>
+
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 hover-scale">
         <img src="assets/images/chefhombre.webp" alt="Chef Ejecutivo" class="w-40 h-40 rounded-full object-cover mb-4">
         <h3 class="text-xl font-bold mb-1">Chef Ejecutivo</h3>
         <p class="text-slate-600 text-center">Experto en cocina internacional y creación de experiencias gourmet únicas.</p>
       </div>
+
       <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 hover-scale">
         <img src="assets/images/chefmujer.jpg" alt="Chef Repostera" class="w-40 h-40 rounded-full object-cover mb-4">
         <h3 class="text-xl font-bold mb-1">Chef Repostera</h3>
         <p class="text-slate-600 text-center">Maestra en repostería fina, con pasión por el detalle y la creatividad.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16 md:py-24 reveal-on-scroll">
+    <div class="container mx-auto px-6 text-center mb-8">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Contacto</h2>
+      <p class="mt-4 text-lg text-slate-600">Estamos aquí para ayudarte y responder tus dudas.</p>
+    </div>
+
+    <div class="container mx-auto px-6 max-w-3xl">
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4" action="#" method="post">
+        <input type="text" name="nombre" id="contactNombre" placeholder="Nombre" class="border rounded-md p-3 w-full" required>
+        <input type="email" name="email" id="contactEmail" placeholder="Correo electrónico" class="border rounded-md p-3 w-full" required>
+        <input type="tel" name="telefono" id="contactTel" placeholder="Teléfono" class="border rounded-md p-3 w-full">
+        <input type="text" name="asunto" id="contactAsunto" placeholder="Asunto" class="border rounded-md p-3 w-full">
+        <textarea name="mensaje" id="contactMensaje" placeholder="Mensaje" rows="5" class="border rounded-md p-3 col-span-1 md:col-span-2"></textarea>
+        <button type="submit" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg md:col-span-2">Enviar Mensaje</button>
+      </form>
     </div>
   </section>
 
@@ -151,10 +234,12 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/524778510780?text=Hola%20quisiera%20informaci%C3%B3n%20y%20reservar" target="_blank" rel="noopener" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all z-50">
+  <!-- Botón WhatsApp (número final) -->
+  <a id="floatWhats" href="https://wa.me/524778510780?text=Hola%20quisiera%20informaci%C3%B3n%20y%20reservar" target="_blank" rel="noopener" aria-label="WhatsApp" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all z-50">
     <i data-lucide="message-circle" class="w-6 h-6"></i>
   </a>
 
+  <!-- JS -->
   <script src="js/main.js"></script>
 </body>
 </html>
