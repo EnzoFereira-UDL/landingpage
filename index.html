@@ -8,11 +8,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="text-slate-800 bg-white">
+  <!-- HEADER -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
       <a href="#" class="flex items-center space-x-3">
@@ -31,9 +31,9 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <a href="#booking-form" class="hidden sm:inline-block cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm tracking-wider">
+        <button id="heroReservaBtn" class="hidden sm:inline-block cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm tracking-wider">
           RESERVAR AHORA
-        </a>
+        </button>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md border border-slate-200" aria-label="Abrir menú móvil">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
@@ -48,51 +48,21 @@
         <a href="#habitaciones" class="block py-2">Habitaciones</a>
         <a href="#gastronomia" class="block py-2">Gastronomía</a>
         <a href="#contacto" class="block py-2">Contacto</a>
-        <a href="#booking-form" class="block py-2 font-bold gold-text">Reservar</a>
+        <a href="https://wa.me/524778510780" target="_blank" class="block py-2 font-bold gold-text">Reservar</a>
       </div>
     </div>
   </header>
 
+  <!-- HERO -->
   <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center" 
     style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/images/fondoindex.jpg'); background-size: cover; background-position: center;">
     <div class="container mx-auto px-6 text-center">
       <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">Su Estancia de Lujo en el Corazón del Bajío</h1>
       <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">Donde la elegancia, el confort y un servicio impecable se encuentran para brindarle una experiencia inolvidable.</p>
-
-      <div id="booking-form" class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-slate-700">
-        <form id="reservaForm" class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
-          <div>
-            <label for="checkin" class="block text-sm font-medium text-slate-600">Llegada</label>
-            <input type="date" id="checkin" class="border rounded-md p-2 w-full" required>
-          </div>
-
-          <div>
-            <label for="checkout" class="block text-sm font-medium text-slate-600">Salida</label>
-            <input type="date" id="checkout" class="border rounded-md p-2 w-full" required>
-          </div>
-
-          <div>
-            <label for="personas" class="block text-sm font-medium text-slate-600">Personas</label>
-            <input type="number" id="personas" min="1" max="10" value="2" class="border rounded-md p-2 w-full" required>
-          </div>
-
-          <div>
-            <label for="habitacion" class="block text-sm font-medium text-slate-600">Tipo de habitación</label>
-            <select id="habitacion" class="border rounded-md p-2 w-full" required>
-              <option value="Habitación Deluxe">Habitación Deluxe</option>
-              <option value="Habitación Junior Suite">Habitación Junior Suite</option>
-              <option value="Habitación Master Suite">Habitación Master Suite</option>
-            </select>
-          </div>
-
-          <button type="submit" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg w-full">
-            Reservar Ahora
-          </button>
-        </form>
-      </div>
     </div>
   </section>
 
+  <!-- SERVICIOS -->
   <section id="servicios" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-10">Servicios Exclusivos</h2>
@@ -116,6 +86,7 @@
     </div>
   </section>
 
+  <!-- HABITACIONES -->
   <section id="habitaciones" class="py-20">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-10">Nuestras Habitaciones</h2>
@@ -147,6 +118,7 @@
     </div>
   </section>
 
+  <!-- GASTRONOMÍA -->
   <section id="gastronomia" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-10">Gastronomía de Autor</h2>
@@ -165,14 +137,31 @@
     </div>
   </section>
 
-  <section id="contacto" class="py-20">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-10">Contáctanos</h2>
-      <p class="mb-6 text-lg">¿Tiene alguna duda o desea una cotización especial? Escríbanos y con gusto lo atenderemos.</p>
-      <p class="text-slate-600">📍 Blvd. Adolfo López Mateos 2301, León, Gto.<br>📞 (477) 555-0101</p>
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-2xl">
+      <h2 class="text-4xl font-bold mb-10 text-center">Contáctanos</h2>
+      <p class="mb-6 text-lg text-center">¿Tiene alguna duda o desea una cotización especial? Escríbanos y con gusto lo atenderemos.</p>
+      <form id="contactForm" class="grid grid-cols-1 gap-4 bg-white p-8 rounded-xl shadow-lg">
+        <div>
+          <label for="nombre" class="block font-medium text-slate-700">Nombre</label>
+          <input type="text" id="nombre" placeholder="Su nombre" required>
+        </div>
+        <div>
+          <label for="correo" class="block font-medium text-slate-700">Correo</label>
+          <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+        </div>
+        <div>
+          <label for="mensaje" class="block font-medium text-slate-700">Mensaje</label>
+          <textarea id="mensaje" rows="4" placeholder="Escriba su mensaje..." required></textarea>
+        </div>
+        <button type="submit" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg">Enviar Mensaje</button>
+      </form>
+      <p class="mt-6 text-slate-600 text-center">📍 Blvd. Adolfo López Mateos 2301, León, Gto.<br>📞 (477) 555-0101</p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="bg-[#1a1a1a] text-white py-12">
     <div class="container mx-auto px-6 text-center space-y-4">
       <p class="text-sm">&copy; 2025 Hotel Brisa del Bajío. Todos los derechos reservados.</p>
@@ -185,6 +174,7 @@
     </div>
   </footer>
 
+  <!-- WhatsApp flotante -->
   <a href="https://wa.me/524778510780" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all">
     <i data-lucide="message-circle" class="w-6 h-6"></i>
   </a>
