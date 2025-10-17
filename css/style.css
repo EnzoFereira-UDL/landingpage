@@ -1,58 +1,59 @@
+/* Fuentes */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fdfcfb;
-  color: #333;
-}
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
 }
 
-.hero-bg {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://source.unsplash.com/1600x900/?luxury-hotel-lobby');
-  background-size: cover;
-  background-position: center;
-}
-
-.cta-button {
-  transition: all 0.3s ease;
-}
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
-}
-
+/* Colores base */
 .gold-text {
   color: #c5a572;
 }
+
 .gold-bg {
   background-color: #c5a572;
 }
-.gold-bg:hover {
-  background-color: #b3915c;
-}
+
 .gold-border {
   border-color: #c5a572;
 }
 
-#mobileMenu {
-  transition: max-height 0.25s ease;
+/* Transiciones */
+.hover-gold-text:hover {
+  color: #c5a572;
 }
 
-a:hover { text-decoration: none; }
-.hover-scale {
+/* Botones */
+.cta-button {
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #a4874c;
   transform: scale(1.05);
-  transition: transform 0.3s ease;
 }
 
+/* Secciones */
+.hero-bg {
+  background: url('https://source.unsplash.com/1600x900/?luxury,hotel') center/cover no-repeat;
+}
+
+/* Animaciones suaves */
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Aparición al hacer scroll */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: all 0.6s ease-out;
 }
 
-.reveal-visible {
+.reveal-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }

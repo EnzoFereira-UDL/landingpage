@@ -1,231 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Brisa del Bajío | Luxury & Comfort en León, Guanajuato</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="icon" href="resources/logo/logo.png" type="image/png">
-    <link rel="stylesheet" href="resources/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Brisa del Bajío | Luxury & Comfort en León, Guanajuato</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="text-slate-800">
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-3">
+        <img src="assets/images/logo.png" alt="Logo Hotel Brisa del Bajío" class="h-12 w-12 object-contain">
+        <div class="text-left">
+          <span class="text-xl font-bold tracking-wider" style="font-family: 'Playfair Display', serif;">Hotel Brisa del Bajío</span>
+          <span class="text-xs gold-text tracking-widest block">LUXURY & COMFORT</span>
+        </div>
+      </a>
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <div class="h-12 w-12 flex items-center justify-center">
-                    <img src="resources/logo/logo.png" alt="Logo Hotel Brisa del Bajío" class="h-12 w-12">
-                </div>
-                <div class="text-left">
-                    <span class="text-xl font-bold tracking-wider" style="font-family: 'Playfair Display', serif;">Hotel Brisa del Bajío</span>
-                    <span class="text-xs gold-text tracking-widest">LUXURY & COMFORT</span>
-                </div>
-            </a>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
-                <a href="#servicios" class="hover:gold-text transition-colors">Servicios</a>
-                <a href="#habitaciones" class="hover:gold-text transition-colors">Habitaciones</a>
-                <a href="#gastronomia" class="hover:gold-text transition-colors">Gastronomía</a>
-                <a href="#explora" class="hover:gold-text transition-colors">Explora León</a>
-                <a href="#contacto" class="hover:gold-text transition-colors">Contacto</a>
-            </div>
-            <a href="#booking-form" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm tracking-wider">
-                RESERVAR AHORA
-            </a>
-        </nav>
-    </header>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
+        <a href="#servicios" class="hover-gold-text transition-colors">Servicios</a>
+        <a href="#habitaciones" class="hover-gold-text transition-colors">Habitaciones</a>
+        <a href="#gastronomia" class="hover-gold-text transition-colors">Gastronomía</a>
+        <a href="#explora" class="hover-gold-text transition-colors">Explora León</a>
+        <a href="#contacto" class="hover-gold-text transition-colors">Contacto</a>
+      </div>
 
-    <main>
-        <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">Su Estancia de Lujo en el Corazón del Bajío</h1>
-                <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">Donde la elegancia, el confort y un servicio impecable se encuentran.</p>
-
-                <div id="booking-form" class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-slate-700">
-                    <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
-                        <div class="text-left">
-                            <label for="checkin" class="block text-sm font-medium text-slate-600">Llegada</label>
-                            <input type="date" id="checkin" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
-                        </div>
-                        <div class="text-left">
-                            <label for="checkout" class="block text-sm font-medium text-slate-600">Salida</label>
-                            <input type="date" id="checkout" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
-                        </div>
-                        <div class="text-left">
-                            <label for="guests" class="block text-sm font-medium text-slate-600">Huéspedes</label>
-                            <select id="guests" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
-                                <option>1 Adulto</option>
-                                <option selected>2 Adultos</option>
-                                <option>2 Adultos, 1 Niño</option>
-                                <option>2 Adultos, 2 Niños</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-sky-700 text-lg">
-                            VER DISPONIBILIDAD
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-[#f3f0ea]">
-            <div class="container mx-auto px-6 py-6 text-center">
-                <h2 class="text-xl md:text-2xl font-bold text-slate-800">
-                    <i data-lucide="shield-check" class="inline-block mr-2 gold-text"></i>
-                    Garantía de Mejor Tarifa y Exclusividad al Reservar Directo
-                </h2>
-            </div>
-        </section>
-
-        <section id="servicios" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Servicios Exclusivos</h2>
-                    <p class="mt-4 text-lg text-slate-600">Diseñados para superar sus expectativas.</p>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border card-hover">
-                        <i data-lucide="wifi" class="mx-auto h-12 w-12 gold-text"></i>
-                        <h3 class="text-xl font-bold mt-4 mb-2">Wi-Fi de Alta Velocidad</h3>
-                        <p class="text-slate-600">Conexión de cortesía en todas las áreas del hotel.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border card-hover">
-                        <i data-lucide="car" class="mx-auto h-12 w-12 gold-text"></i>
-                        <h3 class="text-xl font-bold mt-4 mb-2">Valet Parking</h3>
-                        <p class="text-slate-600">Comodidad y seguridad para su vehículo, incluido en su estancia.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border card-hover">
-                        <i data-lucide="waves" class="mx-auto h-12 w-12 gold-text"></i>
-                        <h3 class="text-xl font-bold mt-4 mb-2">Alberca Climatizada</h3>
-                        <p class="text-slate-600">Un oasis de relajación disponible todo el año.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border card-hover">
-                        <i data-lucide="concierge-bell" class="mx-auto h-12 w-12 gold-text"></i>
-                        <h3 class="text-xl font-bold mt-4 mb-2">Servicio de Concierge</h3>
-                        <p class="text-slate-600">Asistencia personalizada para sus reservaciones y actividades.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="habitaciones" class="py-16 md:py-24 bg-[#f3f0ea]">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Santuarios de Descanso</h2>
-                    <p class="mt-4 text-lg text-slate-600">Cada habitación, una promesa de confort y elegancia.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col card-hover">
-                        <img src="https://source.unsplash.com/600x400/?luxury,hotel,room" alt="Habitación Deluxe" class="w-full h-56 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2">Habitación Deluxe</h3>
-                            <p class="text-slate-600 mb-4 flex-grow">Un refugio de sofisticación y confort con amenidades premium.</p>
-                            <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg button-hover">
-                                Reservar
-                            </a>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col card-hover">
-                        <img src="https://source.unsplash.com/600x400/?hotel,suite,living,room" alt="Junior Suite" class="w-full h-56 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2">Junior Suite</h3>
-                            <p class="text-slate-600 mb-4 flex-grow">Amplitud y lujo con una sala de estar para una experiencia superior.</p>
-                            <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg button-hover">
-                                Reservar
-                            </a>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col card-hover">
-                        <img src="https://source.unsplash.com/600x400/?luxury,hotel,view" alt="Master Suite" class="w-full h-56 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <h3 class="text-2xl font-bold mb-2">Master Suite</h3>
-                            <p class="text-slate-600 mb-4 flex-grow">La máxima expresión de lujo con vistas panorámicas y detalles exclusivos.</p>
-                            <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg button-hover">
-                                Reservar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gastronomia" class="py-16 md:py-24 bg-slate-900 text-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold">Una Experiencia Culinaria Inolvidable</h2>
-                    <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">Nuestros chefs de renombre transforman los ingredientes locales en obras de arte.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto items-center">
-                    <div class="text-center card-hover">
-                        <img src="https://source.unsplash.com/400x400/?portrait,mexican-chef,man" alt="Chef Javier de la Cruz" class="rounded-full w-48 h-48 mx-auto mb-6 border-4 border-[#c5a572] object-cover">
-                        <h3 class="text-2xl font-bold">Javier de la Cruz</h3>
-                        <p class="gold-text font-medium mt-1 mb-3">Chef Ejecutivo</p>
-                        <p class="text-slate-400">“Mi pasión es reinterpretar la cocina del Bajío, llevando sus sabores tradicionales a un nuevo nivel de sofisticación y sorpresa.”</p>
-                    </div>
-                    <div class="text-center card-hover">
-                        <img src="https://source.unsplash.com/400x400/?portrait,female-chef,woman" alt="Chef Isabella Montoya" class="rounded-full w-48 h-48 mx-auto mb-6 border-4 border-[#c5a572] object-cover">
-                        <h3 class="text-2xl font-bold">Isabella Montoya</h3>
-                        <p class="gold-text font-medium mt-1 mb-3">Chef Repostera</p>
-                        <p class="text-slate-400">“Cada postre es una historia. Combino técnicas francesas con la dulzura de los ingredientes de nuestra tierra para crear finales perfectos.”</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <a href="https://wa.me/524771234567?text=Me%20gustaría%20agendar%20una%20cita%20en%20el%20Hotel%20Brisa%20del%20Bajío" target="_blank" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg z-50">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-8 h-8">
+      <div class="flex items-center gap-4">
+        <a href="#booking-form" class="hidden sm:inline-block cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm tracking-wider">
+          RESERVAR AHORA
         </a>
-    </main>
 
-    <footer class="bg-slate-900 text-white">
-    <div class="container mx-auto px-6 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        <div>
-          <h3 class="text-2xl font-bold" style="font-family: 'Playfair Display', serif;">Hotel Brisa del Bajío</h3>
-          <p class="mt-2 text-slate-400">Luxury & Comfort en León, Gto.</p>
-          <p class="mt-4 text-slate-400 flex items-center justify-center md:justify-start">
-            <i data-lucide="map-pin" class="h-5 w-5 mr-2 gold-text"></i>
-            Calle Belisario Domínguez 320, León, Gto.
-          </p>
-          <p class="text-slate-400 flex items-center justify-center md:justify-start">
-            <i data-lucide="phone" class="h-5 w-5 mr-2 gold-text"></i>
-            <a href="tel:+524771234567" class="hover:gold-text">+52 477 123 4567</a>
-          </p>
-          <p class="text-slate-400 flex items-center justify-center md:justify-start">
-            <i data-lucide="mail" class="h-5 w-5 mr-2 gold-text"></i>
-            <a href="mailto:reservaciones@brisadelbajio.com" class="hover:gold-text">reservaciones@brisadelbajio.com</a>
-          </p>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md border border-slate-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white">
+      <div class="px-4 py-4 space-y-2">
+        <a href="#servicios" class="block py-2">Servicios</a>
+        <a href="#habitaciones" class="block py-2">Habitaciones</a>
+        <a href="#gastronomia" class="block py-2">Gastronomía</a>
+        <a href="#explora" class="block py-2">Explora León</a>
+        <a href="#contacto" class="block py-2">Contacto</a>
+        <a href="#booking-form" class="block py-2 font-bold gold-text">Reservar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">Su Estancia de Lujo en el Corazón del Bajío</h1>
+        <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">Donde la elegancia, el confort y un servicio impecable se encuentran.</p>
+
+        <div id="booking-form" class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-slate-700">
+          <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <div class="text-left">
+              <label for="checkin" class="block text-sm font-medium text-slate-600">Llegada</label>
+              <input type="date" id="checkin" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
+            </div>
+            <div class="text-left">
+              <label for="checkout" class="block text-sm font-medium text-slate-600">Salida</label>
+              <input type="date" id="checkout" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
+            </div>
+            <div class="text-left">
+              <label for="guests" class="block text-sm font-medium text-slate-600">Huéspedes</label>
+              <select id="guests" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-[#c5a572] focus:ring-[#c5a572]">
+                <option>1 Adulto</option>
+                <option selected>2 Adultos</option>
+                <option>2 Adultos, 1 Niño</option>
+                <option>2 Adultos, 2 Niños</option>
+              </select>
+            </div>
+            <button type="submit" class="w-full cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-sky-700 text-lg">
+              VER DISPONIBILIDAD
+            </button>
+          </form>
         </div>
+      </div>
+    </section>
 
-        <div>
-          <h4 class="text-lg font-semibold tracking-wider">Navegación</h4>
-          <ul class="mt-4 space-y-2">
-            <li><a href="#servicios" class="hover:gold-text text-slate-400">Servicios</a></li>
-            <li><a href="#habitaciones" class="hover:gold-text text-slate-400">Habitaciones</a></li>
-            <li><a href="#gastronomia" class="hover:gold-text text-slate-400">Gastronomía</a></li>
-            <li><a href="#explora" class="hover:gold-text text-slate-400">Explora León</a></li>
-            <li><a href="#contacto" class="hover:gold-text text-slate-400">Contacto</a></li>
-          </ul>
+    <section class="bg-[#f3f0ea]">
+      <div class="container mx-auto px-6 py-6 text-center">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-800">
+          <i data-lucide="shield-check" class="inline-block mr-2 gold-text"></i>
+          Garantía de Mejor Tarifa y Exclusividad al Reservar Directo
+        </h2>
+      </div>
+    </section>
+
+    <section id="servicios" class="py-16 md:py-24 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Servicios Exclusivos</h2>
+          <p class="mt-4 text-lg text-slate-600">Diseñados para superar sus expectativas.</p>
         </div>
-
-        <div>
-          <h4 class="text-lg font-semibold tracking-wider">Síganos</h4>
-          <div class="flex space-x-4 mt-4 justify-center md:justify-start">
-            <a href="#" aria-label="Facebook"><i data-lucide="facebook" class="hover:gold-text text-slate-400"></i></a>
-            <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="hover:gold-text text-slate-400"></i></a>
-            <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="hover:gold-text text-slate-400"></i></a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+            <i data-lucide="wifi" class="mx-auto h-12 w-12 gold-text"></i>
+            <h3 class="text-xl font-bold mt-4 mb-2">Wi-Fi de Alta Velocidad</h3>
+            <p class="text-slate-600">Conexión de cortesía en todas las áreas del hotel.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+            <i data-lucide="car" class="mx-auto h-12 w-12 gold-text"></i>
+            <h3 class="text-xl font-bold mt-4 mb-2">Valet Parking</h3>
+            <p class="text-slate-600">Comodidad y seguridad para su vehículo, incluido en su estancia.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+            <i data-lucide="waves" class="mx-auto h-12 w-12 gold-text"></i>
+            <h3 class="text-xl font-bold mt-4 mb-2">Alberca Climatizada</h3>
+            <p class="text-slate-600">Un oasis de relajación disponible todo el año.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md text-center border-t-4 gold-border hover-scale">
+            <i data-lucide="concierge-bell" class="mx-auto h-12 w-12 gold-text"></i>
+            <h3 class="text-xl font-bold mt-4 mb-2">Servicio de Concierge</h3>
+            <p class="text-slate-600">Asistencia personalizada para sus reservaciones y actividades.</p>
           </div>
         </div>
       </div>
-      <div class="mt-12 border-t border-slate-700 pt-8 text-center text-slate-500">
-        <p>&copy; 2025 Hotel Brisa del Bajío. Todos los derechos reservados.</p>
+    </section>
+
+    <section id="habitaciones" class="py-16 md:py-24 bg-[#f3f0ea] reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Santuarios de Descanso</h2>
+          <p class="mt-4 text-lg text-slate-600">Cada habitación, una promesa de confort y elegancia.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover-scale">
+            <img src="https://source.unsplash.com/600x400/?luxury,hotel,room" alt="Habitación Deluxe" class="w-full h-56 object-cover">
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold mb-2">Habitación Deluxe</h3>
+              <p class="text-slate-600 mb-4 flex-grow">Un refugio de sofisticación y confort con amenidades premium.</p>
+              <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg">Reservar</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover-scale">
+            <img src="https://source.unsplash.com/600x400/?hotel,suite,living,room" alt="Junior Suite" class="w-full h-56 object-cover">
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold mb-2">Junior Suite</h3>
+              <p class="text-slate-600 mb-4 flex-grow">Amplitud y lujo con una sala de estar para una experiencia superior.</p>
+              <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg">Reservar</a>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover-scale">
+            <img src="https://source.unsplash.com/600x400/?luxury,hotel,view" alt="Master Suite" class="w-full h-56 object-cover">
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold mb-2">Master Suite</h3>
+              <p class="text-slate-600 mb-4 flex-grow">La máxima expresión de lujo con vistas panorámicas y detalles exclusivos.</p>
+              <a href="#booking-form" class="mt-auto cta-button w-full text-center gold-bg text-white font-bold py-3 px-6 rounded-lg">Reservar</a>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <section id="gastronomia" class="py-16 md:py-24 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Gastronomía Exquisita</h2>
+          <p class="mt-4 text-lg text-slate-600">Experiencias culinarias únicas con chefs reconocidos.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 hover-scale">
+            <img src="https://source.unsplash.com/200x200/?chef" alt="Chef Ana" class="w-40 h-40 rounded-full object-cover mb-4">
+            <h3 class="text-xl font-bold mb-1">Chef Ana García</h3>
+            <p class="text-slate-600 text-center">Especialista en cocina internacional y experiencias gourmet.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 hover-scale">
+            <img src="https://source.unsplash.com/200x200/?chef,cooking" alt="Chef Luis" class="w-40 h-40 rounded-full object-cover mb-4">
+            <h3 class="text-xl font-bold mb-1">Chef Luis Martínez</h3>
+            <p class="text-slate-600 text-center">Maestro en cocina regional y fusión moderna.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 hover-scale">
+            <img src="https://source.unsplash.com/200x200/?chef,restaurant" alt="Chef Sofia" class="w-40 h-40 rounded-full object-cover mb-4">
+            <h3 class="text-xl font-bold mb-1">Chef Sofía López</h3>
+            <p class="text-slate-600 text-center">Creatividad y sabor en cada platillo para una experiencia única.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explora" class="py-16 md:py-24 bg-[#f3f0ea] reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Explora León</h2>
+          <p class="mt-4 text-lg text-slate-600">Descubre la riqueza cultural y las experiencias que León tiene para ti.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="overflow-hidden rounded-lg shadow-lg hover-scale">
+            <img src="https://source.unsplash.com/600x400/?leon,mexico" alt="Centro Histórico de León" class="w-full h-56 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-xl">Centro Histórico de León</h3>
+              <p class="text-slate-600 mt-2">Arquitectura colonial y vida cultural vibrante.</p>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg hover-scale">
+            <img src="https://source.unsplash.com/600x400/?leon,museum" alt="Museos y Cultura" class="w-full h-56 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-xl">Museos y Cultura</h3>
+              <p class="text-slate-600 mt-2">Experiencias educativas y artísticas para todos los gustos.</p>
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg hover-scale">
+            <img src="https://source.unsplash.com/600x400/?leon,shopping" alt="Compras y Gastronomía" class="w-full h-56 object-cover">
+            <div class="p-4">
+              <h3 class="font-bold text-xl">Compras y Gastronomía</h3>
+              <p class="text-slate-600 mt-2">Sabores y artesanías locales para disfrutar y llevarte un recuerdo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-16 md:py-24 reveal-on-scroll">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Contacto</h2>
+        <p class="text-lg text-slate-600 mb-8">Estamos aquí para ayudarte y responder tus dudas.</p>
+        <form class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Nombre" class="border rounded-md p-3 w-full">
+          <input type="email" placeholder="Correo electrónico" class="border rounded-md p-3 w-full">
+          <input type="tel" placeholder="Teléfono" class="border rounded-md p-3 w-full">
+          <input type="text" placeholder="Asunto" class="border rounded-md p-3 w-full">
+          <textarea placeholder="Mensaje" rows="4" class="border rounded-md p-3 w-full md:col-span-2"></textarea>
+          <button type="submit" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg md:col-span-2">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#1a1a1a] text-white py-12">
+    <div class="container mx-auto px-6 text-center space-y-4">
+      <p class="text-sm">&copy; 2025 Hotel Brisa del Bajío. Todos los derechos reservados.</p>
+      <div class="flex justify-center gap-6">
+        <a href="#" aria-label="Facebook" class="hover:text-[#c5a572]"><i data-lucide="facebook"></i></a>
+        <a href="#" aria-label="Instagram" class="hover:text-[#c5a572]"><i data-lucide="instagram"></i></a>
+        <a href="#" aria-label="Twitter" class="hover:text-[#c5a572]"><i data-lucide="twitter"></i></a>
+      </div>
+      <p class="text-sm text-slate-400">Blvd. Adolfo López Mateos 2301, León, Gto. | Tel: (477) 851 0780</p>
     </div>
   </footer>
 
-        <script src="js/main.js"></script>
+  <a href="https://wa.me/524778510780" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+  </a>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
