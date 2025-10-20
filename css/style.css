@@ -72,6 +72,8 @@ input, select, textarea {
   padding: 0.6rem 0.8rem;
   width: 100%;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  box-sizing: border-box;
 }
 input:focus, select:focus, textarea:focus {
   outline: none;
@@ -127,3 +129,35 @@ footer a {
 footer a:hover {
   color: #b3915c;
 }
+
+/* --- RESPONSIVE IMPROVEMENTS --- */
+/* Ensure header buttons collapse properly on very small screens */
+@media (max-width: 640px) {
+  .hero-bg { min-height: 60vh; }
+  header nav { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Make booking form stack nicely and increase spacing on mobile */
+#booking-form form { gap: 0.75rem; }
+@media (max-width: 768px) {
+  #booking-form { padding: 1rem; }
+  #booking-form form { grid-template-columns: 1fr !important; }
+  #booking-form form input, #booking-form form select { font-size: 0.95rem; padding: 0.6rem; }
+}
+
+/* Make service/habitacion cards consistent */
+section .hover-scale { min-height: 120px; }
+
+/* Floating WhatsApp improvements */
+#floatingWhatsApp img { display: block; }
+
+/* Small utility to ensure container spacing */
+.container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+
+/* Minor adjustments to preserve look with Tailwind + custom CSS */
+.text-slate-700 { color: #334155; }
+.text-slate-600 { color: #475569; }
+.bg-white\/90 { background-color: rgba(255,255,255,0.90); }
+
+/* Prevent long text overflow on small devices */
+h1, h2, h3 { word-break: keep-all; }
