@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hotel Brisa del Bajío | Luxury & Comfort en León, Guanajuato</title>
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon.png">
-  <!-- Tailwind para utilidades rápidas -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="text-slate-800 bg-white">
+
+  <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
       <a href="#" class="flex items-center space-x-3">
@@ -23,7 +24,7 @@
         </div>
       </a>
 
-      <div id="desktopNav" class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider">
         <a href="#servicios" class="hover-gold-text transition-colors">Servicios</a>
         <a href="#habitaciones" class="hover-gold-text transition-colors">Habitaciones</a>
         <a href="#gastronomia" class="hover-gold-text transition-colors">Gastronomía</a>
@@ -31,17 +32,18 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <button id="heroReserveBtn" class="hidden sm:inline-block btn-cta">
-          RESERVAR AHORA
-        </button>
+        <a href="#booking-form" id="heroReserveBtn" class="hidden sm:inline-block cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm tracking-wider border-2 border-transparent hover:border-[#c5a572] transition-all">
+          RESERVAR
+        </a>
         <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md border border-slate-200" aria-label="Abrir menú móvil">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
           </svg>
         </button>
       </div>
     </nav>
 
+    <!-- Menú móvil -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white">
       <div class="px-4 py-4 space-y-2">
         <a href="#servicios" class="block py-2">Servicios</a>
@@ -53,193 +55,134 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center" 
+  <!-- Hero -->
+  <section id="hero" class="hero-bg text-white min-h-[80vh] flex items-center reveal-on-scroll" 
     style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/images/fondoindex.jpg'); background-size: cover; background-position: center;">
     <div class="container mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Su Estancia de Lujo en el Corazón del Bajío</h1>
-      <p class="text-md md:text-lg mb-10 max-w-3xl mx-auto">Donde la elegancia, el confort y un servicio impecable se encuentran para brindarle una experiencia inolvidable.</p>
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">Su Estancia de Lujo en el Corazón del Bajío</h1>
+      <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">Donde la elegancia, el confort y un servicio impecable se encuentran para brindarle una experiencia inolvidable.</p>
 
-      <div id="booking-form" class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-slate-700 reveal-on-scroll">
+      <div id="booking-form" class="bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-xl shadow-2xl max-w-4xl mx-auto text-slate-700 border-2 border-[#c5a572]">
         <form id="reservaForm" class="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
-          <div class="md:col-span-1">
+          <div>
             <label for="checkin" class="block text-sm font-medium text-slate-600">Llegada</label>
-            <input type="date" id="checkin" class="form-input" required>
+            <input type="date" id="checkin" class="border rounded-md p-2 w-full" required>
           </div>
 
-          <div class="md:col-span-1">
+          <div>
             <label for="checkout" class="block text-sm font-medium text-slate-600">Salida</label>
-            <input type="date" id="checkout" class="form-input" required>
+            <input type="date" id="checkout" class="border rounded-md p-2 w-full" required>
           </div>
 
-          <div class="md:col-span-1">
+          <div>
             <label for="personas" class="block text-sm font-medium text-slate-600">Personas</label>
-            <input type="number" id="personas" min="1" max="10" value="2" class="form-input" required>
+            <input type="number" id="personas" min="1" max="10" value="2" class="border rounded-md p-2 w-full" required>
           </div>
 
-          <div class="md:col-span-1">
-            <label for="num_habitaciones" class="block text-sm font-medium text-slate-600">N.º habitaciones</label>
-            <input type="number" id="num_habitaciones" min="1" max="10" value="1" class="form-input" required>
-          </div>
-
-          <div class="md:col-span-1">
-            <label for="habitacion" class="block text-sm font-medium text-slate-600">Tipo</label>
-            <select id="habitacion" class="form-input" required>
+          <div>
+            <label for="habitacion" class="block text-sm font-medium text-slate-600">Tipo de habitación</label>
+            <select id="habitacion" class="border rounded-md p-2 w-full" required>
               <option value="Habitación Deluxe">Habitación Deluxe</option>
               <option value="Habitación Junior Suite">Habitación Junior Suite</option>
               <option value="Habitación Master Suite">Habitación Master Suite</option>
             </select>
           </div>
 
-          <div class="md:col-span-5">
-            <button type="submit" id="reserveSubmit" class="btn-cta w-full">
-              Reservar Ahora
-            </button>
-          </div>
+          <button type="submit" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg w-full border-2 border-[#c5a572] hover:bg-transparent hover:text-[#c5a572] transition-all">
+            Reservar Ahora
+          </button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-16 reveal-on-scroll">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">Servicios</h2>
-      <p class="mb-6 text-slate-600 max-w-3xl">Atención 24/7, Wi-Fi, desayuno y más.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl bg-white card-shadow hover-shadow hover-raise">
-          <h3 class="font-semibold mb-2">Recepción 24/7</h3>
-          <p class="text-sm text-slate-600">Atención personalizada en español/inglés.</p>
+  <!-- Servicios -->
+  <section id="servicios" class="py-20 bg-slate-50 reveal-on-scroll">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10">Nuestros Servicios</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="hover-card">
+          <img src="assets/images/chefhombre.jpg" alt="Chef hombre" class="rounded-lg shadow-lg mb-4">
+          <h3 class="text-xl font-semibold mb-2">Alta Gastronomía</h3>
+          <p>Disfrute de platillos gourmet preparados por chefs expertos en cocina internacional.</p>
         </div>
-        <div class="p-6 rounded-xl bg-white card-shadow hover-shadow hover-raise">
-          <h3 class="font-semibold mb-2">Wi-Fi Premium</h3>
-          <p class="text-sm text-slate-600">Conexión estable en todas las áreas del hotel.</p>
+        <div class="hover-card">
+          <img src="assets/images/chefmujer.jpg" alt="Chef mujer" class="rounded-lg shadow-lg mb-4">
+          <h3 class="text-xl font-semibold mb-2">Servicio 24/7</h3>
+          <p>Atención personalizada en todo momento, para su máxima comodidad.</p>
         </div>
-        <div class="p-6 rounded-xl bg-white card-shadow hover-shadow hover-raise">
-          <h3 class="font-semibold mb-2">Estacionamiento</h3>
-          <p class="text-sm text-slate-600">Estacionamiento seguro para huéspedes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HABITACIONES -->
-  <section id="habitaciones" class="py-16 bg-slate-50 reveal-on-scroll">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">Habitaciones</h2>
-      <p class="mb-6 text-slate-600 max-w-3xl">Confort y diseño en cada detalle.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Deluxe -->
-        <article class="p-0 rounded-xl bg-white overflow-hidden card-shadow hover-shadow">
-          <div class="relative overflow-hidden image-wrap hover-scale">
-            <img src="assets/images/deluxe.jpg" alt="Habitación Deluxe" class="w-full h-48 object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="font-semibold mb-2">Habitación Deluxe</h3>
-            <p class="text-sm text-slate-600 mb-4">Cama king/queen, baño privado, TV y minibar.</p>
-            <div class="flex gap-2">
-              <button class="btn-outline">Ver más</button>
-              <button class="btn-ghost btn-reserve-inline" data-room="Habitación Deluxe">Reservar</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Junior Suite -->
-        <article class="p-0 rounded-xl bg-white overflow-hidden card-shadow hover-shadow">
-          <div class="relative overflow-hidden image-wrap hover-scale">
-            <img src="assets/images/juniorsuite.jpg" alt="Junior Suite" class="w-full h-48 object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="font-semibold mb-2">Junior Suite</h3>
-            <p class="text-sm text-slate-600 mb-4">Espacio extra y sala de estar.</p>
-            <div class="flex gap-2">
-              <button class="btn-outline">Ver más</button>
-              <button class="btn-ghost btn-reserve-inline" data-room="Habitación Junior Suite">Reservar</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Master Suite -->
-        <article class="p-0 rounded-xl bg-white overflow-hidden card-shadow hover-shadow">
-          <div class="relative overflow-hidden image-wrap hover-scale">
-            <img src="assets/images/mastersuite.jpg" alt="Master Suite" class="w-full h-48 object-cover">
-          </div>
-          <div class="p-6">
-            <h3 class="font-semibold mb-2">Master Suite</h3>
-            <p class="text-sm text-slate-600 mb-4">Suite principal con vista y amenidades premium.</p>
-            <div class="flex gap-2">
-              <button class="btn-outline">Ver más</button>
-              <button class="btn-ghost btn-reserve-inline" data-room="Habitación Master Suite">Reservar</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- GASTRONOMÍA -->
-  <section id="gastronomia" class="py-16 reveal-on-scroll">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-6">Gastronomía</h2>
-      <p class="mb-6 text-slate-600 max-w-3xl">Cocina regional y platillos internacionales.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="p-6 rounded-xl bg-white flex items-start gap-4 card-shadow hover-shadow">
-          <img src="assets/images/chefmujer.jpg" alt="Chef mujer" class="w-28 h-28 object-cover rounded-lg">
-          <div>
-            <h3 class="font-semibold">Chef Ana</h3>
-            <p class="text-sm text-slate-600">Especialista en cocina regional del Bajío.</p>
-          </div>
-        </div>
-        <div class="p-6 rounded-xl bg-white flex items-start gap-4 card-shadow hover-shadow">
-          <img src="assets/images/chefhombre.jpg" alt="Chef hombre" class="w-28 h-28 object-cover rounded-lg">
-          <div>
-            <h3 class="font-semibold">Chef Carlos</h3>
-            <p class="text-sm text-slate-600">Creador de menús contemporáneos.</p>
-          </div>
+        <div class="hover-card">
+          <img src="assets/images/logo.png" alt="Spa" class="rounded-lg shadow-lg mb-4">
+          <h3 class="text-xl font-semibold mb-2">Spa & Wellness</h3>
+          <p>Relájese con nuestros tratamientos y masajes especializados para el descanso total.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO (rehecho) -->
+  <!-- Habitaciones -->
+  <section id="habitaciones" class="py-20 reveal-on-scroll">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10">Nuestras Habitaciones</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="hover-scale">
+          <img src="assets/images/deluxe.jpg" alt="Deluxe" class="rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mt-4">Habitación Deluxe</h3>
+        </div>
+        <div class="hover-scale">
+          <img src="assets/images/juniorsuite.jpg" alt="Junior Suite" class="rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mt-4">Junior Suite</h3>
+        </div>
+        <div class="hover-scale">
+          <img src="assets/images/mastersuite.jpg" alt="Master Suite" class="rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold mt-4">Master Suite</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gastronomía -->
+  <section id="gastronomia" class="py-20 bg-slate-50 reveal-on-scroll">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10">Gastronomía</h2>
+      <p class="max-w-3xl mx-auto mb-10">Nuestro restaurante ofrece una experiencia culinaria inigualable, con platillos inspirados en la cocina mexicana y toques internacionales.</p>
+      <img src="assets/images/chefhombre.jpg" alt="Gastronomía" class="rounded-xl mx-auto shadow-xl hover-scale w-full md:w-2/3">
+    </div>
+  </section>
+
+  <!-- Contacto -->
   <section id="contacto" class="py-20 reveal-on-scroll">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-10">Contáctanos</h2>
-      <p class="mb-6 text-lg text-slate-600">Escríbenos y te responderemos por WhatsApp.</p>
-
-      <form id="contactForm" class="max-w-xl mx-auto grid grid-cols-1 gap-4" novalidate>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label for="contact_nombre" class="block text-sm font-medium text-slate-600">Nombre</label>
-            <input type="text" id="contact_nombre" class="form-input" required maxlength="60" aria-required="true">
-          </div>
-          <div>
-            <label for="contact_apellido" class="block text-sm font-medium text-slate-600">Apellido (opcional)</label>
-            <input type="text" id="contact_apellido" class="form-input" maxlength="60" aria-required="false">
-          </div>
-        </div>
-
+      <p class="mb-6 text-lg">Envíanos un mensaje y te responderemos a la brevedad.</p>
+      <form id="contactForm" class="max-w-2xl mx-auto p-6 border-2 border-[#c5a572] rounded-xl shadow-lg grid grid-cols-1 gap-4">
         <div>
-          <label for="contact_mensaje" class="block text-sm font-medium text-slate-600">Mensaje</label>
-          <textarea id="contact_mensaje" rows="5" class="form-input" required maxlength="1000" aria-required="true"></textarea>
+          <label for="nombre" class="block text-sm font-medium text-slate-600">Nombre *</label>
+          <input type="text" id="nombre" required>
         </div>
-
         <div>
-          <button type="submit" id="contactSend" class="btn-cta w-full">
-            Enviar
-          </button>
+          <label for="apellido" class="block text-sm font-medium text-slate-600">Apellido (opcional)</label>
+          <input type="text" id="apellido">
         </div>
+        <div>
+          <label for="mensaje" class="block text-sm font-medium text-slate-600">Mensaje *</label>
+          <textarea id="mensaje" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="cta-button gold-bg text-white font-bold py-3 px-6 rounded-lg border-2 border-[#c5a572] hover:bg-transparent hover:text-[#c5a572] transition-all">
+          Enviar
+        </button>
       </form>
     </div>
   </section>
 
   <!-- WhatsApp flotante -->
-  <a id="floatingWhatsApp" href="https://wa.me/524778510780?text=Hola%2C+quiero+reservar+una+habitación" 
-     class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 p-4 rounded-full shadow-lg flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/524778510780?text=Hola%2C+quiero+reservar+una+habitación" 
+     class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 p-4 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110" target="_blank">
     <img src="assets/icons/whatsapp.png" alt="WhatsApp" class="w-8 h-8">
   </a>
 
-  <footer class="bg-[#1a1a1a] text-white py-12">
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] text-white py-12 reveal-on-scroll">
     <div class="container mx-auto px-6 text-center space-y-4">
       <p class="text-sm">&copy; 2025 Hotel Brisa del Bajío. Todos los derechos reservados.</p>
       <div class="flex justify-center gap-6">

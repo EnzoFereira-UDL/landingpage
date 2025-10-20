@@ -1,154 +1,169 @@
-/* Tipografía y colores base */
+/* ------------------------------
+   ESTILOS BASE
+---------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fdfcfb;
-  color: #333;
-}
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-}
-
-/* Palette principal */
-:root{
-  --gold: #c5a572;
-  --gold-dark: #b3915c;
-  --muted: #475569;
-  --card-shadow: 0 6px 18px rgba(17,24,39,0.06);
-}
-
-/* Textos y utilidades */
-.gold-text { color: var(--gold); }
-.gold-bg { background-color: var(--gold); }
-.gold-bg:hover { background-color: var(--gold-dark); }
-.hover-gold-text:hover { color: var(--gold); }
-.container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
-
-/* Formularios - clase común */
-.form-input {
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  padding: 0.6rem 0.75rem;
-  width: 100%;
-  transition: box-shadow 0.25s ease, border-color 0.2s ease, transform 0.15s ease;
-  background: #fff;
-  box-sizing: border-box;
-}
-.form-input:focus {
-  outline: none;
-  border-color: var(--gold);
-  box-shadow: 0 6px 18px rgba(197,165,114,0.15);
-  transform: translateY(-1px);
-}
-
-/* Botones estilizados coherentes con la página */
-.btn-cta {
-  display: inline-block;
-  background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
-  color: #fff;
-  font-weight: 700;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  border: 2px solid rgba(0,0,0,0.06);
-  box-shadow: 0 8px 28px rgba(163,133,86,0.12);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  position: relative;
-  overflow: hidden;
-}
-.btn-cta:focus { outline: none; box-shadow: 0 0 0 4px rgba(197,165,114,0.12); }
-.btn-cta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 40px rgba(163,133,86,0.18);
-}
-
-/* Animated border "frame" effect on hover for CTA (pseudo-element) */
-.btn-cta::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-  -webkit-mask:
-    linear-gradient(#fff,#fff) content-box,
-    linear-gradient(#fff,#fff);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.3s;
-  z-index: 0;
-}
-.btn-cta:hover::after { transform: scale(1.03) rotate(-0.5deg); opacity: 0.95; }
-
-/* Outline/ghost button */
-.btn-ghost {
-  background: transparent;
-  color: var(--muted);
-  border: 2px solid #e7e7e7;
-  padding: 0.6rem 0.8rem;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: transform 0.18s ease, border-color 0.18s;
-}
-.btn-ghost:hover {
-  transform: translateY(-4px);
-  border-color: var(--gold);
-  color: #111827;
-  box-shadow: 0 10px 30px rgba(17,24,39,0.06);
-}
-
-/* Simple outline button */
-.btn-outline {
-  background: transparent;
-  border: 1px dashed #e2e8f0;
-  color: #334155;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-}
-.btn-outline:hover { border-color: var(--gold); transform: translateY(-3px); }
-
-/* Card behaviors */
-.card-shadow { box-shadow: var(--card-shadow); border-radius: 12px; }
-.hover-shadow:hover { box-shadow: 0 20px 50px rgba(17,24,39,0.08); transform: translateY(-6px); transition: all 0.28s ease; }
-.hover-raise:hover { transform: translateY(-6px); transition: transform 0.25s ease; }
-
-/* Image scale hover */
-.hover-scale { transition: transform 0.4s cubic-bezier(.2,.9,.3,1); }
-.hover-scale:hover img, .hover-scale:hover { transform: scale(1.06); }
-
-/* Image wrapper to avoid overflow and smooth effect */
-.image-wrap img { transition: transform 0.45s ease; }
-
-/* Buttons in card group */
-.btn-reserve-inline {
-  margin-left: auto;
-  background: linear-gradient(180deg, #fdf8f0 0%, #fff 100%);
   color: #1f2937;
-  border: 1px solid #e6d8bf;
+  background-color: #fff;
 }
-.btn-reserve-inline:hover { border-color: var(--gold); box-shadow: 0 12px 30px rgba(197,165,114,0.08); transform: translateY(-4px); }
 
-/* Reveal on scroll */
-.reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal-on-scroll.visible { opacity: 1; transform: translateY(0); }
+/* Colores principales */
+.gold-text {
+  color: #c5a572;
+}
 
-/* Floating WhatsApp */
-#floatingWhatsApp img { display: block; }
+.gold-bg {
+  background-color: #c5a572;
+}
 
-/* Footer */
-footer { background-color: #222; color: #ddd; text-align: center; padding: 2rem 0; font-size: 0.9rem; }
+/* ------------------------------
+   LINKS Y BOTONES
+---------------------------------*/
+a {
+  transition: all 0.3s ease;
+}
 
-/* Responsive adjustments */
+a:hover {
+  color: #c5a572;
+}
+
+/* CTA principal */
+.cta-button {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------
+   HOVERS Y TARJETAS
+---------------------------------*/
+.hover-card {
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-card:hover {
+  border-color: #c5a572;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+/* Escalado suave de imágenes */
+.hover-scale {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ------------------------------
+   FORMULARIOS
+---------------------------------*/
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #c5a572;
+  box-shadow: 0 0 0 2px rgba(197, 165, 114, 0.2);
+}
+
+/* Campos dentro del marco */
+form {
+  background: #ffffffdd;
+}
+
+/* Botones del formulario */
+form button {
+  background-color: #c5a572;
+  color: white;
+  font-weight: 600;
+  border: 2px solid #c5a572;
+  border-radius: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: transparent;
+  color: #c5a572;
+  transform: scale(1.03);
+}
+
+/* ------------------------------
+   EFECTOS DE APARICIÓN SCROLL
+---------------------------------*/
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------
+   MENÚ MÓVIL
+---------------------------------*/
+#mobileMenu {
+  transition: all 0.3s ease;
+}
+
+/* ------------------------------
+   BOTÓN WHATSAPP
+---------------------------------*/
+a[href*="wa.me"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+a[href*="wa.me"]:hover {
+  transform: scale(1.1);
+  background-color: #20b558;
+}
+
+/* ------------------------------
+   MEDIA QUERIES
+---------------------------------*/
 @media (max-width: 768px) {
-  .hero-bg { min-height: 60vh; }
-  .image-wrap img { height: auto; }
+  .hover-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .hover-scale:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .cta-button:hover {
+    transform: none;
+  }
 }
-
-/* Accessibility focus */
-a:focus, button:focus, input:focus, select:focus, textarea:focus {
-  outline: 3px solid rgba(197,165,114,0.12);
-  outline-offset: 2px;
-}
-
-/* Minor color aliases for mixing tailwind and CSS classes */
-.text-slate-700 { color: #334155; }
-.text-slate-600 { color: #475569; }
-.bg-white\/90 { background-color: rgba(255,255,255,0.90); }
