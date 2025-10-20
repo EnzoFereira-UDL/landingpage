@@ -28,6 +28,7 @@ a {
 }
 
 a:hover {
+  background-color: #fff;
   color: #c5a572;
 }
 
