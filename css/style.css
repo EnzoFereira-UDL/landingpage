@@ -1,5 +1,5 @@
 /* ------------------------------
-   ESTILOS BASE
+    ESTILOS BASE
 ---------------------------------*/
 html {
   scroll-behavior: smooth;
@@ -21,7 +21,7 @@ body {
 }
 
 /* ------------------------------
-   LINKS Y BOTONES
+    LINKS Y BOTONES
 ---------------------------------*/
 a {
   transition: all 0.3s ease;
@@ -42,7 +42,7 @@ a:hover {
 }
 
 /* ------------------------------
-   HOVERS Y TARJETAS
+    HOVERS Y TARJETAS
 ---------------------------------*/
 .hover-card {
   background: #fff;
@@ -71,7 +71,7 @@ a:hover {
 }
 
 /* ------------------------------
-   FORMULARIOS
+    FORMULARIOS
 ---------------------------------*/
 form input,
 form select,
@@ -113,7 +113,7 @@ form button:hover {
 }
 
 /* ------------------------------
-   EFECTOS DE APARICIÓN SCROLL
+    EFECTOS DE APARICIÓN SCROLL
 ---------------------------------*/
 .reveal-on-scroll {
   opacity: 0;
@@ -127,14 +127,14 @@ form button:hover {
 }
 
 /* ------------------------------
-   MENÚ MÓVIL
+    MENÚ MÓVIL
 ---------------------------------*/
 #mobileMenu {
   transition: all 0.3s ease;
 }
 
 /* ------------------------------
-   BOTÓN WHATSAPP
+    BOTÓN WHATSAPP
 ---------------------------------*/
 a[href*="wa.me"] {
   display: flex;
@@ -152,7 +152,7 @@ a[href*="wa.me"]:hover {
 }
 
 /* ------------------------------
-   MEDIA QUERIES
+    MEDIA QUERIES
 ---------------------------------*/
 @media (max-width: 768px) {
   .hover-card:hover {
