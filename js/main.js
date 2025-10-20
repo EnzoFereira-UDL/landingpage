@@ -34,11 +34,11 @@ reservaForm.addEventListener("submit", (e) => {
   const habitacion = document.getElementById("habitacion").value;
   
   // Formatear el mensaje
-  let mensaje = `¡Hola! 👋 Me gustaría solicitar una reserva:\n\n`;
-  mensaje += `*Habitación:* ${habitacion}\n`;
-  mensaje += `*Llegada:* ${checkin}\n`;
-  mensaje += `*Salida:* ${checkout}\n`;
-  mensaje += `*Personas:* ${personas}\n\n`;
+  let mensaje = `¡Hola! Me gustaría solicitar una reserva:\n\n`;
+  mensaje += `Seria en la(s) habitacion(es) ${habitacion}\n`;
+  mensaje += `Para el dia: ${checkin}\n`;
+  mensaje += `Hasta: ${checkout}\n`;
+  mensaje += `Con ${personas} personas\n\n`;
   mensaje += `Espero su confirmación. ¡Gracias!`;
   
   // Codificar mensaje para URL
@@ -65,8 +65,8 @@ contactForm.addEventListener("submit", (e) => {
   const mensajeUsuario = document.getElementById("mensaje").value;
   
   // Formatear el mensaje
-  let mensaje = `¡Hola! 👋 Mi nombre es ${nombre} ${apellido}.\n\n`;
-  mensaje += `*Mensaje:*\n${mensajeUsuario}`;
+  let mensaje = `¡Hola! Mi nombre es ${nombre} ${apellido}.\n\n`;
+  mensaje += `\n${mensajeUsuario}`;
   
   // Codificar mensaje para URL
   const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
