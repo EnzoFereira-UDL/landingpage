@@ -34,7 +34,7 @@ reservaForm.addEventListener("submit", (e) => {
   const habitacion = document.getElementById("habitacion").value;
   
   // Formatear el mensaje
-  let mensaje = `¡Hola! Me gustaría solicitar una reserva:\n\n`;
+  let mensaje = `¡Hola! 👋 Me gustaría solicitar una reserva:\n\n`;
   mensaje += `*Habitación:* ${habitacion}\n`;
   mensaje += `*Llegada:* ${checkin}\n`;
   mensaje += `*Salida:* ${checkout}\n`;
@@ -47,8 +47,7 @@ reservaForm.addEventListener("submit", (e) => {
   // Abrir WhatsApp en una nueva pestaña
   window.open(url, '_blank');
   
-  // Opcional: Avisar al usuario y limpiar el formulario
-  // alert("Serás redirigido a WhatsApp para completar tu reserva.");
+  // Limpiamos el formulario
   reservaForm.reset();
 });
 
@@ -66,7 +65,7 @@ contactForm.addEventListener("submit", (e) => {
   const mensajeUsuario = document.getElementById("mensaje").value;
   
   // Formatear el mensaje
-  let mensaje = `¡Hola! Mi nombre es ${nombre} ${apellido}.\n\n`;
+  let mensaje = `¡Hola! 👋 Mi nombre es ${nombre} ${apellido}.\n\n`;
   mensaje += `*Mensaje:*\n${mensajeUsuario}`;
   
   // Codificar mensaje para URL
@@ -75,8 +74,7 @@ contactForm.addEventListener("submit", (e) => {
   // Abrir WhatsApp en una nueva pestaña
   window.open(url, '_blank');
 
-  // Opcional: Avisar al usuario y limpiar el formulario
-  // alert("Serás redirigido a WhatsApp para enviar tu mensaje.");
+  // Limpiamos el formulario
   contactForm.reset();
 });
 
